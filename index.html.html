@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ReadyKit Intro</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #0f172a;
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #00ADB5;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 400;
+      color: #cbd5e1;
+      margin-bottom: 40px;
+    }
+
+    .image-container {
+      width: 600px;
+      max-width: 90%;
+      cursor: pointer;
+      transition: transform 1.2s ease-in-out;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .zoomed {
+      transform: scale(3);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ReadyKit</h1>
+  <h2>Deine Reise beginnt hier</h2>
+
+  <div class="image-container" id="zoomContainer">
+    <img src="readykit-voranmeldungsseite.png" alt="ReadyKit Laptop" style="width: 100%; display: block;" />
+  </div>
+
+  <script>
+    const container = document.getElementById('zoomContainer');
+
+    container.addEventListener('click', () => {
+      container.classList.add('zoomed');
+
+      // Nach der Zoom-Animation weiterleiten
+      setTimeout(() => {
+        window.location.href = "voranmeldung.html";
+      }, 1200); // Dauer der Animation in ms
+    });
+  </script>
+</body>
+</html>
